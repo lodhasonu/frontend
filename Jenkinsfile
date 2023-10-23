@@ -21,7 +21,7 @@ pipeline {
             steps {
                 checkout(
                     scm: [$class: 'GitSCM', branches: [[name: "${params.BRANCH_NAME}"]], 
-                        userRemoteConfigs: [[url: 'git@github.com:sonulodha/krmyg-app.git']]
+                        userRemoteConfigs: [[url: 'git@github.com:sonulodha/frontend.git']]
                     ]
                 )
             }
