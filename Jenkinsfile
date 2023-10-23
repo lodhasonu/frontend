@@ -13,7 +13,7 @@ pipeline {
         acr_registry = 'krmygecr.azurecr.io'
         repository = 'frontend'
         deploy_env = 'poc'
-        argocdFile = 'frontend'
+        argocdFile = 'frontend-v2'
     }
 
     stages {
@@ -57,10 +57,10 @@ pipeline {
                 script {
                     sh """
                         cd GitOps
-                        sed -i "s/.*tag:.*/  tag: ${env.git_commit_sha}/g" valuestore/${deploy_env}/${argocdFile}.yaml
+                        sed -i "s/.*tag:.*/  tag: ${env.git_commit_sha}/g" valuestore/${deploy_env}/frontend/${argocdFile}.yaml
                         git config --global user.name "Argocd"
                         git config --global user.email "sonulodha@yahoo.com"
-                        git add valuestore/${deploy_env}/${argocdFile}.yaml || true
+                        git add valuestore/${deploy_env}/frontend/${argocdFile}.yaml || true
                         git commit -m "Done by Jenkins job ${env.git_commit_sha}" || true
                         git pull 
                         git push origin main || true
