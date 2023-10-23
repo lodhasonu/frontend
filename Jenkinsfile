@@ -11,9 +11,9 @@ pipeline {
 
     environment {
         acr_registry = 'krmygecr.azurecr.io'
-        repository = 'nginx'
+        repository = 'frontend'
         deploy_env = 'poc'
-        argocdFile = 'admin'
+        argocdFile = 'frontend'
     }
 
     stages {
