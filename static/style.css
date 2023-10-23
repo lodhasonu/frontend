@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #d1cece;
+}
+
+h1 {
+    color: #000000;
+}
+h2 {
+    color: #ffffff;
+}
+
+.ci-tool {
+    background-color: #0f0505; /* red color */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: rgb(16, 172, 48);
+}
+
+.cd-tool {
+    background-color: #000000; /* blue color */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: rgb(16, 172, 48);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
