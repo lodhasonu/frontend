@@ -13,7 +13,7 @@ pipeline {
         acr_registry = 'krmygecr.azurecr.io'
         repository = 'frontend'
         deploy_env = 'poc'
-        argocdFile = 'frontend-v2'
+        argocdFile = 'frontend'
     }
 
     stages {
@@ -57,7 +57,7 @@ pipeline {
                 script {
                     sh """
                         cd GitOps
-                        sed -i "s/.*tag:.*/  tag: ${env.git_commit_sha}/g" valuestore/${deploy_env}/frontend/${argocdFile}.yaml
+                        sed -i "s/.*tag:.*/  tag: ${env.git_commit_sha}/g" valuestore/${deploy_env}/${argocdFile}.yaml
                         git config --global user.name "Argocd"
                         git config --global user.email "sonulodha@yahoo.com"
                         git add valuestore/${deploy_env}/frontend/${argocdFile}.yaml || true
